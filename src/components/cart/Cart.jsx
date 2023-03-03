@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartState.js";
 import CartItem from "../cartItem/CartItem";
+import { NumericFormat } from "react-number-format";
+
 import "./Cart.css";
 const Cart = () => {
   const { showCart, cartItems, showHideCart } = useContext(CartContext);
@@ -31,10 +33,15 @@ const Cart = () => {
             <div>Cart Total</div>
             <div></div>
             <div style={{ marginLeft: 5 }}>
-              {/* {formatCurrency(
-                cartItems.reduce((amount, item) => item.price + amount, 0),
-                opts
-              )} */}
+              <NumericFormat
+                allowLeadingZeros
+                value={cartItems
+                  .reduce((amount, item) => item.price + amount, 0)
+                  .toFixed(2)}
+                displayType={"text"}
+                thousandSeparator={true}
+                prefix={"$"}
+              />
             </div>
           </div>
         </div>

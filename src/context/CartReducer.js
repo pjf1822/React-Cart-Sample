@@ -11,10 +11,10 @@ const CartReducer = (state, action) => {
     }
     case "REMOVE_ITEM": {
       const firstItemMatch = state.cartItems.findIndex(
-        (item) => item._id == action.payload
+        (item) => item._id === action.payload
       );
 
-      const newArray = state.cartItems.splice(firstItemMatch, 1);
+      state.cartItems.splice(firstItemMatch, 1);
 
       return {
         ...state,

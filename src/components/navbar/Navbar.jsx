@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartState.js";
+import "./Navbar.css";
 const Navbar = () => {
   const { cartItems, showHideCart } = useContext(CartContext);
   return (
