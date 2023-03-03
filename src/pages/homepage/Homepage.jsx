@@ -9,7 +9,7 @@ const Homepage = () => {
   const { navHeight } = useContext(CartContext);
 
   return (
-    <div style={{ marginTop: navHeight + 10 }}>
+    <div style={{ marginTop: navHeight + 20 }}>
       <div className="productsWrapper">
         {products.map((product, i) => {
           return <ProductCard product={product} key={product._id} />;

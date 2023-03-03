@@ -10,7 +10,7 @@ const Navbar = () => {
   }, []);
   return (
     <nav ref={ref}>
-      <div className="nav__left">Store</div>
+      <div className="nav__left"></div>
       <div className="nav__middle">
         <div className="input__wrapper">
           <input type="text" />

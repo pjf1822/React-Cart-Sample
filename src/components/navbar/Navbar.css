@@ -1,15 +1,16 @@
 nav {
-  color: white;
+  color: whites;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50px;
-  background-color: #1d1f27;
-  padding: 0 20px;
+  background-color: var(--sand);
+  padding: 15px 20px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.095);
 }
 
 .nav__left {
