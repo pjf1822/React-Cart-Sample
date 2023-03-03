@@ -7,6 +7,7 @@ export const CartState = ({ children }) => {
   const initalState = {
     showCart: false,
     cartItems: [],
+    navHeight: 0,
   };
 
   const [state, dispatch] = useReducer(CartReducer, initalState);
@@ -22,6 +23,10 @@ export const CartState = ({ children }) => {
     dispatch({ type: "SHOW_HIDE_CART" });
   };
 
+  const setNavHeight = (height) => {
+    dispatch({ type: "SET_NAV_HEIGHT", payload: height });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -30,6 +35,8 @@ export const CartState = ({ children }) => {
         addToCart,
         showHideCart,
         removeItem,
+        setNavHeight,
+        navHeight: state.navHeight,
       }}
     >
       {children}

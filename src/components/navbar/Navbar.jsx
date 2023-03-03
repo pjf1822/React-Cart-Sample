@@ -2,12 +2,11 @@ import { useContext, useRef, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartState.js";
 import "./Navbar.css";
 const Navbar = () => {
-  const { cartItems, showHideCart } = useContext(CartContext);
-  const [height, setHeight] = useState(0);
+  const { cartItems, showHideCart, setNavHeight } = useContext(CartContext);
   const ref = useRef(null);
 
   useEffect(() => {
-    setHeight(ref.current.clientHeight);
+    setNavHeight(ref.current.clientHeight);
   }, []);
   return (
     <nav ref={ref}>

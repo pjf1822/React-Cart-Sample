@@ -9,6 +9,13 @@ const CartReducer = (state, action) => {
         showCart: !state.showCart,
       };
     }
+    case "SET_NAV_HEIGHT": {
+      console.log("is the even runnign");
+      return {
+        ...state,
+        navHeight: action.payload,
+      };
+    }
     case "REMOVE_ITEM": {
       const firstItemMatch = state.cartItems.findIndex(
         (item) => item._id === action.payload
