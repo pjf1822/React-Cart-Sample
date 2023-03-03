@@ -5,8 +5,8 @@ import products from "../../data.js";
 const Homepage = () => {
   return (
     <div>
-      {products.map((product) => {
-        return <ProductCard product={product} />;
+      {products.map((product, i) => {
+        return <ProductCard product={product} key={product._id} />;
       })}
     </div>
   );

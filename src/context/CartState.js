@@ -1,9 +1,9 @@
-import { createContext, useReducer } from "react";
+import { useReducer, createContext } from "react";
 import CartReducer from "./CartReducer";
 
-const CartContext = createContext();
+export const CartContext = createContext();
 
-const Context = ({ children }) => {
+export const CartState = ({ children }) => {
   const initalState = {
     showCart: false,
     cartItems: [],
@@ -11,16 +11,15 @@ const Context = ({ children }) => {
 
   const [state, dispatch] = useReducer(CartReducer, initalState);
 
+  const removeItem = (id) => {
+    dispatch({ type: "REMOVE_ITEM", payload: id });
+  };
   const addToCart = (item) => {
-    dispatch({ type: "SHOWCART", payload: item });
+    dispatch({ type: "ADD_TO_CART", payload: item });
   };
 
   const showHideCart = () => {
-    dispatch({ type: "ADDTOCART" });
-  };
-
-  const removeItem = (id) => {
-    dispatch({ type: "REMOVEITEM", payload: id });
+    dispatch({ type: "SHOW_HIDE_CART" });
   };
 
   return (
@@ -37,5 +36,3 @@ const Context = ({ children }) => {
     </CartContext.Provider>
   );
 };
-
-export default Context;
