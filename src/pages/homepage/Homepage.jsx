@@ -11,21 +11,6 @@ const Homepage = () => {
 
   const debouncedSearchValue = useDebounce(searchBar, 1000);
 
-  console.log(
-    products.filter((post) => {
-      if (searchBar === "") {
-        //if query is empty
-        return post;
-      } else if (
-        post.name.toLowerCase().includes(debouncedSearchValue.toLowerCase())
-      ) {
-        //returns filtered array
-        return post;
-      }
-    })
-  );
-  {
-  }
   return (
     <div style={{ marginTop: navHeight + 20 }}>
       <div className="productsWrapper">

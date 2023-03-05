@@ -82,4 +82,14 @@ input:active {
     color: gray;
     flex: 4;
   }
+
+  .cart__icon {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cart__icon {
+    margin-right: 0px;
+  }
 }

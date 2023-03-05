@@ -33,3 +33,10 @@
 .fa-times-circle:hover {
   transform: rotate(90deg);
 }
+
+@media screen and (max-width: 600px) {
+  .cart__wrapper {
+    right: 0px;
+    width: 80%;
+  }
+}
