@@ -2,29 +2,27 @@ import { useContext } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 import products from "../../data.js";
 import "./Homepage.css";
+import useDebounce from "../../hooks/useDebounce";
 
 import { CartContext } from "../../context/CartState.js";
 
 const Homepage = () => {
   const { navHeight, searchBar } = useContext(CartContext);
 
+  const debouncedSearchValue = useDebounce(searchBar, 1000);
+
   console.log(
-    products
-      .filter((post) => {
-        if (searchBar === "") {
-          //if query is empty
-          return post;
-        } else if (post.name.toLowerCase().includes(searchBar.toLowerCase())) {
-          //returns filtered array
-          return post;
-        }
-      })
-      .map((post, index) => (
-        <div className="box" key={index}>
-          <p>{post.title}</p>
-          <p>{post.author}</p>
-        </div>
-      ))
+    products.filter((post) => {
+      if (searchBar === "") {
+        //if query is empty
+        return post;
+      } else if (
+        post.name.toLowerCase().includes(debouncedSearchValue.toLowerCase())
+      ) {
+        //returns filtered array
+        return post;
+      }
+    })
   );
   {
   }
@@ -36,7 +34,9 @@ const Homepage = () => {
             if (searchBar === "") {
               return post;
             } else if (
-              post.name.toLowerCase().includes(searchBar.toLowerCase())
+              post.name
+                .toLowerCase()
+                .includes(debouncedSearchValue.toLowerCase())
             ) {
               return post;
             }
