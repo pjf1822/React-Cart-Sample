@@ -23,6 +23,14 @@ const CartReducer = (state, action) => {
 
       state.cartItems.splice(firstItemMatch, 1);
 
+      if (state.cartItems.length === 0) {
+        return {
+          ...state,
+          cartItems: state.cartItems,
+          showCart: !state.showCart,
+        };
+      }
+
       return {
         ...state,
         cartItems: state.cartItems,

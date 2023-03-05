@@ -20,9 +20,9 @@ const Cart = () => {
           </div>
           <div className="cart__innerWrapper">
             {cartItems.length === 0 ? (
-              <h4>Cart is Empty</h4>
+              <h4 style={{ fontSize: 17 }}>Cart is Empty</h4>
             ) : (
-              <ul>
+              <ul style={{ paddingLeft: 0 }}>
                 {cartItems.map((item, i) => (
                   <CartItem key={`${item}${i}`} item={item} />
                 ))}
@@ -31,7 +31,7 @@ const Cart = () => {
           </div>
           <div className="Cart__cartTotal">
             <div>Cart Total</div>
-            <div></div>
+
             <div style={{ marginLeft: 5 }}>
               <NumericFormat
                 allowLeadingZeros

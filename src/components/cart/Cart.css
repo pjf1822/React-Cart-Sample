@@ -3,26 +3,30 @@
   top: 60px;
   right: 20px;
   border-radius: 12px;
-  background-color: white;
-  border: 1px solid gray;
-  padding: 10px;
+  background-color: var(--sand);
+  border: 3px solid var(--lightBlue);
+  /* padding: 10px; */
   z-index: 10;
+  padding: 10px 30px;
 }
 
 .cart__innerWrapper {
   height: max-content;
   max-height: 50vh;
   overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .Cart__cartTotal {
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
+  border-top: 2px solid var(--lightBlue);
+  padding-top: 15px;
 }
 
 .fa-times-circle {
-  color: gray;
+  color: var(--lightBlue);
   transition: transform 0.2s linear;
 }
 

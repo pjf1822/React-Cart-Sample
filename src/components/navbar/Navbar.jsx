@@ -1,4 +1,4 @@
-import { useContext, useRef, useEffect, useState } from "react";
+import { useContext, useRef, useEffect } from "react";
 import { CartContext } from "../../context/CartState.js";
 import "./Navbar.css";
 const Navbar = () => {
@@ -7,7 +7,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setNavHeight(ref.current.clientHeight);
-  }, []);
+  }, [setNavHeight]);
   return (
     <nav ref={ref}>
       <div className="nav__left"></div>
@@ -26,7 +26,7 @@ const Navbar = () => {
           />
           {cartItems.length > 0 && (
             <div className="item__count">
-              <span>{cartItems.length}</span>
+              <span style={{ fontSize: 12 }}>{cartItems.length}</span>
             </div>
           )}
         </div>
