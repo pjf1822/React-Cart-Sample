@@ -8,6 +8,7 @@ export const CartState = ({ children }) => {
     showCart: false,
     cartItems: [],
     navHeight: 0,
+    searchBar: "",
   };
 
   const [state, dispatch] = useReducer(CartReducer, initalState);
@@ -27,6 +28,10 @@ export const CartState = ({ children }) => {
     dispatch({ type: "SET_NAV_HEIGHT", payload: height });
   };
 
+  const ourSearchFunction = (query) => {
+    dispatch({ type: "SEARCH_BAR", payload: query });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -36,6 +41,8 @@ export const CartState = ({ children }) => {
         showHideCart,
         removeItem,
         setNavHeight,
+        ourSearchFunction,
+        searchBar: state.searchBar,
         navHeight: state.navHeight,
       }}
     >

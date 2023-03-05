@@ -10,10 +10,15 @@ const CartReducer = (state, action) => {
       };
     }
     case "SET_NAV_HEIGHT": {
-      console.log("is the even runnign");
       return {
         ...state,
         navHeight: action.payload,
+      };
+    }
+    case "SEARCH_BAR": {
+      return {
+        ...state,
+        searchBar: action.payload,
       };
     }
     case "REMOVE_ITEM": {
