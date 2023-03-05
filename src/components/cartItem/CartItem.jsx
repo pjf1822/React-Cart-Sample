@@ -23,7 +23,7 @@ const CartItem = ({ item }) => {
           className="CartItem__buttonHidden"
           onClick={() => removeItem(item._id)}
         >
-          Remove
+          {process.env.SAMPLE_THING}
         </button>
       </div>
       <button className="CartItem__button" onClick={() => removeItem(item._id)}>
